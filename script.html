@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{font-size: 20px;}
+        input[type='text']{width: 50px;}
+        span.asterisk{vertical-align: middle;}
+        .calc{padding-left: 100px;}
+        .calc .result{width: auto;}
+        .calc strong{display:block; margin-bottom : 40px;}
+    </style>
+    <script src="jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <h1>스크립트 연습</h1>
+
+    <pre>
+        <strong>
+            1. '5' 를 제외한 1~10 숫자 출력하기
+        </strong>
+        
+        <span>
+            for(var i = 0; i < 10; i++){
+                if( i !== 4 ){
+                    console.log( (i + 1) )
+                }
+            }
+        </span>
+
+        <strong>
+            2. 구구단 출력하기
+        </strong>
+        
+        <span>
+            for(var i = 1 ; i < 10 ; i++){
+                for(var j = 1 ; j < 10 ; j++){
+                    console.log(i + " * " + j  + ' = ' + (i*j))
+                }
+            }
+        </span>
+    </pre>
+
+    <div class="calc">
+        <strong>3. 계산기</strong>
+        <input type="text" class="ipt">
+        <span class="asterisk"> * </span>
+        <input type="text" class="ipt">
+        <span> = </span>
+        <input type="text" class="result">
+        <button>계산</button>
+    </div>
+    
+    <script>
+        for(var i = 0; i < 10; i++){
+            if( i !== 4 ){
+                console.log( (i + 1) )
+            }
+        }
+
+        for(var i = 1 ; i < 10 ; i++){
+            for(var j = 1 ; j < 10 ; j++){
+                console.log(i + " * " + j  + ' = ' + (i*j))
+            }
+        }
+
+        $('button').on('click', function(){
+            var val1 = $('.calc .ipt').eq(0).val();
+            var val2 = $('.calc .ipt').eq(1).val();
+            var result = val1 * val2;
+
+            $('.calc .result').val(result);
+        })
+    </script>
+</body>
+</html>
